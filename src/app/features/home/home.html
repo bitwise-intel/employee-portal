@@ -1,0 +1,15 @@
+<div class="home">
+  <app-welcome-header [user]="auth.user()" />
+
+  @defer (on viewport) {
+    <div class="home__cards">
+      <app-status-card label="system.status" value="● operational" [accent]="true" />
+      <app-status-card label="portal.version" value="1.0.0" />
+    </div>
+  } @placeholder {
+    <div class="home__cards-skeleton" aria-hidden="true">
+      <div class="home__card-placeholder"></div>
+      <div class="home__card-placeholder"></div>
+    </div>
+  }
+</div>

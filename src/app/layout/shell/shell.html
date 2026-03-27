@@ -1,0 +1,11 @@
+<div class="shell" [class.shell--nav-collapsed]="navCollapsed()">
+  <app-nav-rail
+    [collapsed]="navCollapsed()"
+    [user]="auth.user()"
+    (toggleCollapse)="navCollapsed.update((v) => !v)"
+    (logout)="auth.logout()"
+  />
+  <main class="shell__main">
+    <router-outlet />
+  </main>
+</div>

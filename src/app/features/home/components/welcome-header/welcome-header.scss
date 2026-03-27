@@ -1,0 +1,26 @@
+.welcome-header {
+  margin-bottom: 48px;
+
+  &__tag {
+    font-size: 12px;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  &__greeting {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 10px;
+  }
+
+  &__email {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+}

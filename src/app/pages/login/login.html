@@ -1,0 +1,36 @@
+<div class="login-backdrop">
+  <!-- Decorative animated binary columns -->
+  <div class="binary-deco" aria-hidden="true">
+    @for (col of binaryCols; track $index) {
+      <span>{{ col }}</span>
+    }
+  </div>
+
+  <!-- Sign-in card -->
+  <div class="login-card">
+    <!-- Wordmark -->
+    <div class="flex items-center gap-1 text-3xl font-bold">
+      <span class="font-mono text-accent">[ </span>
+      <span style="font-family: var(--font-display)" class="text-text">bitwise</span>
+      <span class="font-mono text-accent"> ]</span>
+    </div>
+
+    <p class="font-mono text-xs tracking-[0.12em] text-text-muted">portal.bitwise.tech</p>
+
+    <hr class="w-full border-0 border-t" style="border-color: var(--color-glass-border)" />
+
+    <h1 class="self-start text-2xl font-bold text-text" style="font-family: var(--font-display)">
+      Welcome back
+    </h1>
+    <p class="self-start text-sm leading-relaxed text-text-muted">
+      Sign in with your Bitwise Google Workspace account to continue.
+    </p>
+
+    <!-- GIS button mount point -->
+    <div #googleBtn class="mt-2 flex w-full justify-center"></div>
+
+    <footer class="mt-4 font-mono text-[11px] text-text-faint">
+      &copy;&nbsp;{{ year() }}&nbsp;Bitwise Technologies
+    </footer>
+  </div>
+</div>

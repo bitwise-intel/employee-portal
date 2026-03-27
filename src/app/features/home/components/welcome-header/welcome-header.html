@@ -1,0 +1,9 @@
+@let u = user();
+
+<header class="welcome-header">
+  <p class="welcome-header__tag font-mono">// dashboard</p>
+  <h1 class="welcome-header__greeting">{{ greeting() }}</h1>
+  @if (u?.email) {
+    <p class="welcome-header__email font-mono">{{ u!.email }}</p>
+  }
+</header>

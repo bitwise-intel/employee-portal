@@ -1,0 +1,34 @@
+@let u = user();
+
+<div class="user-badge" [class.user-badge--collapsed]="collapsed()">
+  @if (u?.photoUrl) {
+    <img
+      class="user-badge__avatar"
+      [ngSrc]="u!.photoUrl"
+      width="32"
+      height="32"
+      [alt]="u!.name"
+      referrerpolicy="no-referrer"
+    />
+  } @else {
+    <div class="user-badge__avatar user-badge__avatar--placeholder font-mono text-accent">
+      {{ u?.firstName?.charAt(0) ?? '?' }}
+    </div>
+  }
+
+  @if (!collapsed()) {
+    <div class="user-badge__info">
+      <span class="user-badge__name">{{ u?.firstName }}</span>
+      <span class="user-badge__email font-mono">{{ u?.email }}</span>
+    </div>
+  }
+
+  <button
+    class="user-badge__logout font-mono"
+    (click)="logout.emit()"
+    title="Sign out"
+    aria-label="Sign out"
+  >
+    ↩
+  </button>
+</div>

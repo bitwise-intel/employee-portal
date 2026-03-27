@@ -1,0 +1,33 @@
+<nav class="nav-rail" [class.nav-rail--collapsed]="collapsed()" aria-label="Main navigation">
+  <!-- Wordmark -->
+  <div class="nav-rail__logo">
+    <span class="font-mono text-accent">[ </span>
+    <span class="nav-rail__logo-text">bw</span>
+    <span class="font-mono text-accent"> ]</span>
+  </div>
+
+  <!-- Collapse toggle -->
+  <button
+    class="nav-rail__toggle font-mono"
+    (click)="toggleCollapse.emit()"
+    [attr.aria-label]="collapsed() ? 'Expand navigation' : 'Collapse navigation'"
+  >
+    {{ collapsed() ? '›' : '‹' }}
+  </button>
+
+  <!-- Navigation items -->
+  <ul class="nav-rail__items" role="list">
+    @for (item of navItems; track item.route) {
+      <li>
+        <app-nav-item [item]="item" [collapsed]="collapsed()" />
+      </li>
+    }
+  </ul>
+
+  <!-- User section -->
+  <app-user-badge
+    [user]="user()"
+    [collapsed]="collapsed()"
+    (logout)="logout.emit()"
+  />
+</nav>

@@ -1,0 +1,31 @@
+.status-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--color-glass-border);
+  transition: border-color 200ms ease;
+
+  &:hover {
+    border-color: rgba(0, 229, 255, 0.25);
+  }
+
+  &__label {
+    font-size: 11px;
+    color: var(--color-text-faint);
+    letter-spacing: 0.08em;
+    margin: 0 0 10px;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+
+    &--accent {
+      color: var(--color-accent);
+    }
+  }
+}

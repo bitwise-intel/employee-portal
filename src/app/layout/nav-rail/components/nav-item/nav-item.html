@@ -1,0 +1,11 @@
+<a
+  class="nav-link"
+  [routerLink]="item().route"
+  routerLinkActive="nav-link--active"
+  [attr.title]="collapsed() ? item().label : null"
+>
+  <span class="nav-link__icon font-mono">{{ item().icon }}</span>
+  @if (!collapsed()) {
+    <span class="nav-link__label">{{ item().label }}</span>
+  }
+</a>
