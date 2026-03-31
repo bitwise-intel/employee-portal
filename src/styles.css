@@ -1,6 +1,4 @@
-/* Tailwind v4 — loaded via PostCSS before Sass */
-/* stylelint-disable-next-line import/no-unresolved */
-@use "tailwindcss";
+@import "tailwindcss";
 
 @theme {
   /* ── Colors ──────────────────────────────────────────────── */
