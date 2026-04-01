@@ -19,7 +19,8 @@ services:
       - key: PORT
         value: 3000
 
-  - type: static_site
+  - type: web
+    runtime: static
     name: employee-portal
     buildCommand: npm ci && ng build --configuration=production
     staticPublishPath: dist/employee-portal/browser
