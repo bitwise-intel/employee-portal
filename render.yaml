@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: employee-portal-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci && npm run build && npx prisma migrate deploy
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: employee-portal-db
+          property: connectionString
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: PORT
+        value: 3000
+
+  - type: static_site
+    name: employee-portal
+    buildCommand: npm ci && ng build --configuration=production
+    staticPublishPath: dist/employee-portal/browser
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+databases:
+  - name: employee-portal-db
+    plan: free
